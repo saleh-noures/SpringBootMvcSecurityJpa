@@ -35,7 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
                 .logout()
-                //.logoutSuccessUrl("/home") //If removed, the login page will be presented
+                .logoutSuccessUrl("/home") //If removed, the login page will be presented ... Try
                 .permitAll()
                 .and()
                 .exceptionHandling().accessDeniedHandler(accessDeniedHandler);
