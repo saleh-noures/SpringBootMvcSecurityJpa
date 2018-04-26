@@ -8,6 +8,12 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.access.AccessDeniedHandler;
 
+/*
+Adapter classes are used in a case when you want to maintain
+the default Spring boot configurations, at the same time you
+need to make some modifications to these configurations
+*/
+
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
