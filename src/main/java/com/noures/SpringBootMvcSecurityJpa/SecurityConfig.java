@@ -28,6 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
                 .antMatchers("/h2/**").permitAll()
+                .antMatchers("/rest/**").permitAll() // enabled to test Rest calls
                 .antMatchers("/member/**").hasAnyRole("USER")
                 .antMatchers("/company/**").hasAnyRole("EMPLOYEE")
                 .anyRequest().authenticated()
@@ -63,6 +64,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .usersByUsernameQuery(
                         "select username,password, enabled from users where username=?")
                 .authoritiesByUsernameQuery(
-                        "select username, role from user_roles where username=?")*/;
+                        "select username, role from user_roles where username=?");*/
     }
 }
