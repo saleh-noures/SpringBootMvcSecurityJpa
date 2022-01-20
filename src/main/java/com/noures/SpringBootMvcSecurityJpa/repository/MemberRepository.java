@@ -8,9 +8,9 @@ import java.util.List;
 
 public interface MemberRepository extends JpaRepository<Member, Long> {
 
-    public Member findByEmail(String email);
+    Member findByEmail(String email);
 
     @Query("SELECT m FROM Member m order by m.name asc")
-    public List<Member> findAllOrderByName();
+    List<Member> findAllOrderByName();
 
 }
