@@ -53,7 +53,7 @@ public class DeptRestController {
     }
 
     // verb= POST http://localhost:8080/SpringBootMvcSecurityJpaApplication/rest/depts/1/emps
-    @RequestMapping(value = "/{id}/emps", method = RequestMethod.POST, produces = "application/json")
+    @RequestMapping(value = "/{id}/emps", method = RequestMethod.POST, consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
     public void AddEmpToDept(@PathVariable("id") Long deptId, @RequestBody Emp emp) {
         Dept dept = deptRepository.findOne(deptId);

@@ -9,6 +9,6 @@ import java.util.List;
 public interface EmpRepository extends JpaRepository<Emp, Long> {
 
     @Query("SELECT e FROM Emp e order by e.name asc")
-    public List<Emp> findAllOrderByName();
+    List<Emp> findAllOrderByName();
 
 }

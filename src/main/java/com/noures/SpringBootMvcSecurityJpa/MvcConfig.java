@@ -1,6 +1,7 @@
 package com.noures.SpringBootMvcSecurityJpa;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
@@ -12,7 +13,7 @@ need to make some modifications to these configurations
 
 @Configuration
 public class MvcConfig extends WebMvcConfigurerAdapter {
-/*   If a request handler method returns only the logical view name, it
+/*  If a request handler method returns only the logical view name, it
     is no use to create a dedicated request handler method, alternatively
     view controller can be registered and used for this purpose.*/
     public void addViewControllers(ViewControllerRegistry registry) {
@@ -22,6 +23,11 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
         registry.addViewController("/login").setViewName("login");
 
         //registry.addViewController("/unauthorized").setViewName("unauthorized");
+    }
+
+    //CORS Support
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/api/**");
     }
 
 }
